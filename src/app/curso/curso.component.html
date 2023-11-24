@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Plataforma</th>
+            <th scope="col">Año lanzamiento</th>
+            <th scope="col">Duracion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of listacursos" (click)="onSelect(c)">
+            <th scope="row"><dd>{{c.id}}</dd></th>
+            <td><dd>{{c.title}}</dd></td>
+            <td><dd>{{c.platform}}</dd></td>
+            <td><dd>{{c.launch_year}}</dd></td>
+            <td><dd>{{c.duration_hours}}</dd></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col" *ngIf="cursoSeleccionado">
+      <div class="card">
+        <img class="card-img-top" [src]="cursoSeleccionado.image" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ cursoSeleccionado.title }}</h5>
+          <p class="card-text">{{ cursoSeleccionado.description }}</p>
+          <h5 class="card-title">{{cursoSeleccionado.offers_certificate}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
