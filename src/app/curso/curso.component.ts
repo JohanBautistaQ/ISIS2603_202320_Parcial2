@@ -11,6 +11,7 @@ import { CursoService } from './curso.service';
 export class cursoComponent implements OnInit{
   listacursos: Curso[] = [];
   cursoSeleccionado?: Curso;
+  idsConCertificado: number[] = [];
 
 
   constructor(private cursoService: CursoService) {}
@@ -19,10 +20,11 @@ export class cursoComponent implements OnInit{
     this.getCursosList();
   }
 
+ 
   getCursosList(): void {
     this.cursoService.getCursos().subscribe(cursos => {
       this.listacursos = cursos;
-      
+      this.idsConCertificado = cursos.filter(c => c.offers_certificate).map(c => c.id);
     });
   }
 

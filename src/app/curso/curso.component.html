@@ -20,15 +20,23 @@
             <td><dd>{{c.duration_hours}}</dd></td>
           </tr>
         </tbody>
+        <div *ngIf="idsConCertificado.length > 0">
+          Los cursos {{ idsConCertificado.join(', ') }} ofrecen certificado.
+        </div>
+        
+        
+        
       </table>
     </div>
     <div class="col" *ngIf="cursoSeleccionado">
       <div class="card">
-        <img class="card-img-top" [src]="cursoSeleccionado.image" alt="Card image cap">
+        <img class="card-img-top" [src]="cursoSeleccionado.image" alt="Card image cap" height="400" width="30"  >
         <div class="card-body">
           <h5 class="card-title">{{ cursoSeleccionado.title }}</h5>
           <p class="card-text">{{ cursoSeleccionado.description }}</p>
-          <h5 class="card-title">{{cursoSeleccionado.offers_certificate}}</h5>
+          <h5 class="card-title" *ngIf="cursoSeleccionado.offers_certificate"> Si tiene certificado :) </h5>
+          <h5 class="card-title" *ngIf="!cursoSeleccionado.offers_certificate"> No tiene certificado :) </h5>
+
         </div>
       </div>
     </div>
