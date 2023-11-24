@@ -14,7 +14,7 @@
         <tbody>
           <tr *ngFor="let c of listacursos" (click)="onSelect(c)">
             <th scope="row"><dd>{{c.id}}</dd></th>
-            <td><dd>{{c.title}}</dd></td>
+            <td id="titulo"><dd>{{c.title}}</dd></td>
             <td><dd>{{c.platform}}</dd></td>
             <td><dd>{{c.launch_year}}</dd></td>
             <td><dd>{{c.duration_hours}}</dd></td>

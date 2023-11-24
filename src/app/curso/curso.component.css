@@ -1,28 +1,47 @@
-table{
+
+.container-fluid {
+    font-family: 'Arial', sans-serif; 
+  }
+ 
+  .table {
     margin-top: 40px;
-    background-color: rgb(215, 215, 215);
-    text-align: left;
-    border-collapse:collapse ;
+    background-color: #ffffff; 
+    border-collapse: collapse;
     width: 100%;
+  }
+  
+#titulo {
+    color: blue;
 }
 
-.div-centered{
-    margin-right:50px;
-    margin-left:50px;
-}
-
-th,td{
+  
+  .div-centered {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  
+  
+  th, td {
     padding: 15px;
-}
+    border: 1px solid #dddddd; 
+  }
+  
 
-thead{
-    background-color: rgb(164, 164, 164);
-}
+  thead {
+    background-color: green; 
+    color: white;
+  }
+  
+  .div-certificado {
+    font-size: 0.9em; 
+    color: #333333; 
+    margin-top: 20px; 
+    font-style: italic;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 8px; 
+  }
 
-table tbody tr td:nth-child(2) {
-    color: rgb(255, 0, 0);
-}
-
-table tbody tr td:nth-child(1) {
-    font-weight: bold;
-}
+ 
